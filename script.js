@@ -22,3 +22,18 @@ function prev() {
 }  
 
 var timer = setInterval(next, 4000); //  le défilement automatique
+
+document.querySelector('input[type="file"]').addEventListener('change', function(e) {
+  src = URL.createObjectURL(this.files[0]); // set src to blob url
+  
+  var allowedExtensions = /(\.jpg|\.jpeg|\.png|\.gif)$/i; 
+    
+  if (!allowedExtensions.exec(this.files[0].name)) { 
+    alert('Type de fichier invalide'); 
+    this.value = ''; 
+    return false; 
+  } else {
+    imgSrc.push(src);
+    alert('New image has been added to the slider');
+  } 
+});
