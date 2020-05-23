@@ -21,7 +21,7 @@ function prev() {
   img.src = imgSrc[i];  // changer la source d'image en fonction du compteur
 }  
 
-var timer = setInterval(next, 4000); //  le défilement automatique
+var timer = setInterval(next, 3000); //  le défilement automatique
 
 document.querySelector('input[type="file"]').addEventListener('change', function(e) {
   src = URL.createObjectURL(this.files[0]); // set src to blob url
